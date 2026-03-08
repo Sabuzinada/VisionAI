@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+/* ── VisionAI Dark Neon Theme ── */
+:root {
+  --background: #050d1a;
+  --foreground: #e8edf5;
+  --card: #0a1628;
+  --card-foreground: #e8edf5;
+  --primary: #00e5ff;
+  --primary-foreground: #050d1a;
+  --secondary: #0f2240;
+  --secondary-foreground: #e8edf5;
+  --muted: #0f2240;
+  --muted-foreground: #6b8299;
+  --accent: #0f2240;
+  --accent-foreground: #e8edf5;
+  --destructive: #ff4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 229, 255, 0.12);
+  --ring: #00e5ff;
+  --radius: 0.75rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ── Neon Glow Effects ── */
+.neon-glow {
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5), 0 0 20px rgba(0, 229, 255, 0.3), 0 0 40px rgba(0, 229, 255, 0.1);
+}
+
+.neon-border {
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.15), inset 0 0 15px rgba(0, 229, 255, 0.05);
+}
+
+/* ── Webcam Container ── */
+.webcam-container {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+/* ── Scan Line Animation ── */
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  box-shadow: 0 0 15px var(--primary), 0 0 30px rgba(0, 229, 255, 0.3);
+  animation: scanDown 2.5s ease-in-out infinite;
+  z-index: 10;
+  pointer-events: none;
+}
+
+@keyframes scanDown {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* ── Confidence Bar Animation ── */
+.confidence-bar {
+  transition: width 0.5s ease-out;
+}
+
+/* ── Page Enter Animation ── */
+.page-enter {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ── Button Base ── */
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+}
