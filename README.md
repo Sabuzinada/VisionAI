@@ -65,29 +65,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 > vercel dev
 > ```
 
-## Deploy to Vercel
 
-### 1. Push to GitHub
-
-```bash
-git init
-git add .
-git commit -m "Initial commit - VisionAI"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/visionai.git
-git push -u origin main
-```
-
-### 2. Deploy on Vercel
-
-1. Go to [vercel.com](https://vercel.com) and sign in with GitHub
-2. Click **"Add New Project"**
-3. Import your `visionai` repository
-4. In the **Environment Variables** section, add:
-   - `OPENAI_API_KEY` = your OpenAI API key
-5. Click **Deploy**
-
-That's it! Your VisionAI app will be live at `https://your-project.vercel.app`
 
 ## Project Structure
 
@@ -129,6 +107,3 @@ The AI Vision Scan uses OpenAI's GPT-4o Vision API. Typical costs:
 - Each scan: ~$0.01-0.03 depending on image size
 - Fast Detection (COCO-SSD) is completely free (runs in browser)
 
-## License
-
-MIT
